@@ -1,10 +1,12 @@
-#Links
+Links
+
 https://css-tricks.com/snippets/css/complete-guide-grid/
 
-###more examples
+More examples
+
 https://gridbyexample.com/examples/
 
-#Install
+Install
 
 
 `$npm install`
