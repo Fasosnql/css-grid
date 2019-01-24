@@ -1,3 +1,49 @@
 #responsive-content {
-  color: green;
+  %item {
+    background: blue;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 300px;
+    .item {
+      @extend %item;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas: "area-1" "area-2";
+
+    .area-1 {
+      grid-area: area-1;
+    }
+
+    .area-2 {
+      grid-area: area-2;
+    }
+  }
+
+  .sidebar {
+    background: red;
+  }
+
+  @media (max-width: 767px) {
+    .grid {
+      grid-template-columns: auto;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .content {
+      grid-template-rows: 30% 70%;
+      grid-template-areas: "area-2" "area-1";
+    }
+  }
 }

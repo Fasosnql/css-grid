@@ -1,3 +1,36 @@
 #alignment-content {
-  color: green;
+  .grid {
+    display: grid;
+    background: #f1f1f1;
+    grid-template-rows: 500px;
+
+    .text-boxes {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(4, auto);
+      text-align: center;
+
+      justify-items: center;
+
+      align-items: end;
+
+      .item {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid red;
+
+        &.first {
+          justify-self: start;
+        }
+
+        &.second, &.third {
+          align-self: center;
+        }
+
+        &.last {
+          justify-self: end;
+        }
+      }
+    }
+  }
 }
