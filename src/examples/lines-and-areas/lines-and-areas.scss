@@ -1,3 +1,56 @@
 #line-and-areas-content {
-  color: green;
+  %item {
+    background: blue;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .lines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, 100px);
+    grid-gap: 10px;
+    .item {
+      @extend %item;
+      &.a {
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      &.d {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+    }
+  }
+
+  .explicitly-grid {
+    display: grid;
+    grid-template-columns: [col-start] 100px [col-middle] 200px repeat(2, auto) [col-end] 100px;
+    grid-template-rows: 100px 100px;
+    grid-gap: 10px;
+    .item {
+      @extend %item;
+      &.f {
+        grid-column: col-middle / span 4;
+      }
+    }
+  }
+
+  .grid-areas {
+    display: grid;
+    grid-template-rows: 100px;
+    grid-gap: 10px;
+    grid-template-areas: "area-1 area-2";
+    .item {
+      @extend %item;
+    }
+
+    .area-1 {
+      grid-area: area-1;
+    }
+
+    .area-2 {
+      grid-area: area-2;
+    }
+  }
 }

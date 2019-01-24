@@ -1,16 +1,16 @@
-%item {
-  background: blue;
-}
-
 #basic-content {
+  %item {
+    background: blue;
+    color: red;
+    font-weight: bold;
+  }
   .grid-columns {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 100px 100px 100px 1fr; //fit-content, repeat
     grid-template-rows: 100px 100px 100px;
-    grid-gap: 10px;
+    grid-gap: 10px; //column gap, row gap
     .item {@extend %item}
   }
-
   .inline-grid {
     display: inline-grid;
     grid-template-columns: 200px 200px;
