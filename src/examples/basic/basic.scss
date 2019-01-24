@@ -1,3 +1,21 @@
+%item {
+  background: blue;
+}
+
 #basic-content {
-  color: blue;
+  .grid-columns {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 10px;
+    .item {@extend %item}
+  }
+
+  .inline-grid {
+    display: inline-grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 100px;
+    grid-gap: 10px;
+    .item {@extend %item}
+  }
 }
