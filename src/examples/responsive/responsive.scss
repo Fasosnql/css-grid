@@ -26,6 +26,11 @@
     .area-2 {
       grid-area: area-2;
     }
+
+    .mobile-header {
+      display: none;
+      grid-area: mobile-header;
+    }
   }
 
   .sidebar {
@@ -41,9 +46,15 @@
       display: none;
     }
 
+
     .content {
-      grid-template-rows: 30% 70%;
-      grid-template-areas: "area-2" "area-1";
+      grid-template-rows: 20% 70%;
+      grid-template-areas:
+              "mobile-header mobile-header"
+              "area-2 area-1";
+      .mobile-header {
+        display: block;
+      }
     }
   }
 }

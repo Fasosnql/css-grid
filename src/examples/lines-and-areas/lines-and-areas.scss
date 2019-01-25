@@ -30,8 +30,11 @@
     grid-gap: 10px;
     .item {
       @extend %item;
+      &.a {
+        grid-row: 1 / span 2;
+      }
       &.f {
-        grid-column: col-middle / span 4;
+        grid-column: col-middle / span 4; //-1
       }
     }
   }
